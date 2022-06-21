@@ -1,42 +1,53 @@
-console.log("Hello World! This is a Rock Paper Scissor Game!");
-
-let computerGuess;
-let userMarks;
 let userInput;
-let winner;
+let counter = 0;
+let counterM;
+let userMarks;
 let pcMarks;
-let numberOfGuesses;
-let counter;
-let varInput;
+let userTemp;
+let pcTemp;
 
 
-// function btnInput(){
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    countCheck();
+    userInput = "rock";
+    console.log('User input is rock');
+    computerPlay();
+    counter = ++counter
+    console.log(counter, "-----");
+    comparingCode();
 
-//     const btnR = document.querySelector('#rock');
-//     btnR.addEventListener('click', () => {
-//     console.log("Rock Selected");
-//     varInput = "rock";
-//     return varInput;
-//      });
-//     const btnP = document.querySelector('#paper');
-//     btnP.addEventListener('click', () =>{
-//     console.log("Paper Selected");
-//     varInput = "paper";
-//     return varInput;
-//     })
-//     const btnS = document.querySelector('#scissor');
-//     btnS.addEventListener('click' ,() => {
-//     console.log("Scissor Selected");
-//     varInput = "scissor";
-//     return varInput;
-//     })
+})
 
-// }
+const paper = document.querySelector('#paper');
+paper.addEventListener('click' , () => {
+    countCheck();
+    userInput = "paper";
+    console.log('User input is paper');
+    computerPlay();
+    counter = ++counter
+    console.log(counter);
+    comparingCode();
 
+})
+
+const s = document.querySelector('#s');
+s.addEventListener('click' , () => {
+    countCheck();
+    userInput = "scissor";
+    console.log('User input is scissor');
+    computerPlay();
+    counter = ++counter
+    console.log(counter);
+    comparingCode();
+})
+
+
+console.log(userInput);
 
 function computerPlay(){
     let randomNum = Math.floor(Math.random() * 3);
-    console.log(randomNum);
+    // console.log(randomNum);
     if(randomNum===0){
         console.log("Computer Guess is Rock");
         computerGuess = 0;
@@ -44,12 +55,13 @@ function computerPlay(){
     } else if (randomNum===1){
         console.log("Computer Guess is Paper");
         computerGuess = 1;
+        return computerGuess;
     } else {
         console.log("Computer Guess is Scissor")
         computerGuess = 2;
+        return computerGuess;
     }
 }
-
 
 function comparingCode(){
     if (userInput==="rock" && computerGuess===0){
@@ -81,24 +93,19 @@ function comparingCode(){
     }
 }
 
-function playerGuess() {
-    userInput = window.prompt("Is it Rock , Paper or Scissors?");
-    console.log("User Input is" ,userInput)
-    return userInput;
+function countCheck(){
+    
+    if(counter = 5){
+
+        if (userMarks < pcMarks) {
+            console.log("PC Wins bish")
+        }else {
+            console.log("User Wins bish")
+        }
+
+    } else {
+    
+        console.log("counter is---------------------- "  ,counter);
+        
+    }
 }
-
-
-for (let i = 0; i < 5; i++){
-    playerGuess();
-    computerPlay();
-    comparingCode();
-}
-
-
-
-if (userMarks < pcMarks){
-    winner = "The Computer"
-}else {
-    winner = "The User"
-}
-console.log("--------Winner is,", winner , "-------")
