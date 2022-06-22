@@ -1,0 +1,33 @@
+.marksDisplay {
+    display: flex;
+    justify-content: space-evenly;
+    border: 3px solid green;
+}
+
+.images {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.leftImgS , .rightImgS{
+    height: auto;
+    width: 180px;
+    border: 3px solid green;
+}
+
+.body{
+    background-color: antiquewhite;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+}
+
+.playerMarksCounter , .computerMarksCounter{
+    border: 3px solid green;
+    
+}
