@@ -120,3 +120,15 @@
     background-color: black;
 
 }
+
+.vs {
+    font-family: 'Exo 2', sans-serif;
+    border: 3px solid green;
+
+}
+
+.winnerDisplay{
+    font-family: 'Exo 2', sans-serif;
+    display: flex;
+    justify-content: center;
+}
